@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: file-handling
+
+aws:
+  region: ap-southeast-1
+  accessKeyId: __
+  secretKey: __
+  s3:
+    bucket: feeham-test-bkt
