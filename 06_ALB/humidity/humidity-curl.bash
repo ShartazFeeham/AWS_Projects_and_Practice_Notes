@@ -1,0 +1,1 @@
+curl -X GET http://localhost:8020/api/current-humidity

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  humidity-api:
+    container_name: humidity-service
+    image: shartazfeeham/humidity-api:latest
+    ports:
+      - "8020:8020"
+    restart: always
+
+  temperature-api:
+    container_name: temperature-service
+    image: shartazfeeham/temperature-api:latest
+    ports:
+      - "8010:8010"
+    restart: always

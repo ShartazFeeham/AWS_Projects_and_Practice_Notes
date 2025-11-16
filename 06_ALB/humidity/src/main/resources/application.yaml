@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: humidity
+server:
+  port: 8020
