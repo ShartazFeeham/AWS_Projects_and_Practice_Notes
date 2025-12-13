@@ -1,0 +1,29 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: nature
+
+  # AWS secrets
+  config:
+    import: optional:aws-secretsmanager:/dev/nature/db/nature-db?prefix=db.
+
+  # Database configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    username: user
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format-sql: true
+
+logging:
+  level:
+    io.awspring.cloud.secretsmanager: DEBUG
+    software.amazon.awssdk: DEBUG

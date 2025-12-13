@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: humidity
+
+  # AWS secrets
+  config:
+    import: aws-secretsmanager:/dev/nature/db/nature-db?prefix=db.
+
+  # Database configuration
+  datasource:
+    url: jdbc:postgresql://${db.host}/nature
+    username: ${db.username}
+    password: ${db.password}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format-sql: true
+
+logging:
+  level:
+    io.awspring.cloud.secretsmanager: DEBUG
+    software.amazon.awssdk: DEBUG
